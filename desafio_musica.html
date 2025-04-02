@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Músicas</title>
+</head>
+
+<body>
+    <h1>Desafio de Programação: Playlist Interativa</h1>
+
+    <label for="ipt_qtdMusicas">Digite a quantidade de músicas que deseja ouvir: </label>
+    <input type="number" id="ipt_qtdMusicas">
+    <button onclick="show()">Começar o Show</button>
+
+    <div id="div_mensagem"></div>
+</body>
+<script>
+    function show() {
+        var qtdMusicas = Number(ipt_qtdMusicas.value);
+        var mensagem = "";
+        var aprovadas = 0;
+        var reprovadas = 0;
+
+        for (var i = 1; i <= qtdMusicas; i++) {
+            var musica = prompt("Digite o nome da música:");  
+
+            alert(`Tocando a ${i}ª música: ${musica}`);
+
+            var avaliacao = prompt("Você gosta dessa música? (sim ou não)");
+
+           if(avaliacao == "sim"){
+            aprovadas += 1;
+           }else if(avaliacao == "não"){
+            reprovadas += 1;
+           }
+           
+           mensagem = `Tocaram ${i} músicas <br>
+                        ${aprovadas} músicas foram aprovadas (gostou) <br>
+                        ${reprovadas} músicas foram reprovadas (não gostou)`
+
+        }
+
+        
+       div_mensagem.innerHTML = mensagem;
+
+    }
+
+
+</script>
+
+</html>
