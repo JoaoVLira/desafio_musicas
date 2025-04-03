@@ -32,10 +32,9 @@
 
             alert(`Tocando a ${i}ª música: ${musica}`);
 
-
-            while (avaliacao != "sim" || "não") {
+            while (avaliacao != "sim" || avaliacao != "não") {
                 var avaliacao = prompt("Você gosta dessa música? (sim ou não)")
-
+                
                 if (avaliacao == "sim") {
                     aprovadas += 1;
                     break
