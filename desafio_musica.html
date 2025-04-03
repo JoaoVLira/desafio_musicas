@@ -25,30 +25,37 @@
 
         for (var i = 1; i <= qtdMusicas; i++) {
             var musica = prompt("Digite o nome da música:");
-            
-            while(musica == musicaDigitada){
+
+            while (musica == musicaDigitada) {
                 musica = prompt("Essa música acabou de tocar, escolha outra:")
             }
 
             alert(`Tocando a ${i}ª música: ${musica}`);
 
-            var avaliacao = prompt("Você gosta dessa música? (sim ou não)");
 
-           if(avaliacao == "sim"){
-            aprovadas += 1;
-           }else if(avaliacao == "não"){
-            reprovadas += 1;
-           }
-           
-           mensagem = `Tocaram ${i} músicas <br>
+            while (avaliacao != "sim" || "não") {
+                var avaliacao = prompt("Você gosta dessa música? (sim ou não)")
+
+                if (avaliacao == "sim") {
+                    aprovadas += 1;
+                    break
+                } else if (avaliacao == "não") {
+                    reprovadas += 1;
+                    break
+                } else {
+                    alert('[ERRO] Responda apenas com sim ou não!')
+                }
+            }
+
+            mensagem = `Tocaram ${i} músicas <br>
                         ${aprovadas} músicas foram aprovadas (gostou) <br>
                         ${reprovadas} músicas foram reprovadas (não gostou)`
 
-           var musicaDigitada = musica;
+            var musicaDigitada = musica;
         }
 
-        
-       div_mensagem.innerHTML = mensagem;
+
+        div_mensagem.innerHTML = mensagem;
 
     }
 
