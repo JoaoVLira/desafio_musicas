@@ -24,7 +24,11 @@
         var reprovadas = 0;
 
         for (var i = 1; i <= qtdMusicas; i++) {
-            var musica = prompt("Digite o nome da música:");  
+            var musica = prompt("Digite o nome da música:");
+            
+            while(musica == musicaDigitada){
+                musica = prompt("Essa música acabou de tocar, escolha outra:")
+            }
 
             alert(`Tocando a ${i}ª música: ${musica}`);
 
@@ -40,6 +44,7 @@
                         ${aprovadas} músicas foram aprovadas (gostou) <br>
                         ${reprovadas} músicas foram reprovadas (não gostou)`
 
+           var musicaDigitada = musica;
         }
 
         
